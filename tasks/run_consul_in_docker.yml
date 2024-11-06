@@ -1,10 +1,9 @@
 ---
 - name: Start docker consul container
-  community.docker.docker_compose:
+  community.docker.docker_compose_v2:
     state: present
     project_name: patroni_cluster
     definition:
-      version: '2'
       services:
         consul:
           image: "{{ consul_image }}:{{ consul_image_version }}"

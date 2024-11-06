@@ -1,10 +1,9 @@
 ---
 - name: Start docker patroni container
-  community.docker.docker_compose:
+  community.docker.docker_compose_v2:
     state: present
     project_name: patroni_cluster
     definition:
-      version: '2'
       services:
         patroni:
           image: "{{ patroni_image }}:{{ patroni_image_version }}"
